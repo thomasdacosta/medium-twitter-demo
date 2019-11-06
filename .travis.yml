@@ -1,0 +1,11 @@
+language: java
+jdk: openjdk8
+sudo: true
+install: true
+before_install:
+  - chmod +x mvnw
+script: 
+  - ./mvnw clean install
+cache:
+  directories:
+  - $HOME/.m2
