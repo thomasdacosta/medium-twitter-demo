@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/thomasdacosta/twitter-demo.svg?branch=develop)](https://travis-ci.org/thomasdacosta/twitter-demo)
 
-Aplicação de exemplo para consumo das informações do Twitter utilizando hashtags como filtro de pesquisa.
+Aplicação de exemplo para consumo das informações do Twitter utilizando hashtags como filtro de pesquisa e informar o usuário que possuir mais seguidores
 
 ### Módulos
 
