@@ -1,6 +1,6 @@
 # Twitter Consumer
 
-[![Build Status](https://travis-ci.org/thomasdacosta/twitter-demo.svg?branch=develop)](https://travis-ci.org/thomasdacosta/twitter-demo)
+[![Build Status](https://travis-ci.org/thomasdacosta/twitter-demo.svg?branch=master)](https://travis-ci.org/thomasdacosta/twitter-demo)
 
 Consumidor de tweets desenvolvido em **Spring Boot** e **Java** para sumarizar os usuários com maior numero de seguidores por hashtag
 
