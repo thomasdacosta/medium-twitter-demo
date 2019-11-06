@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/thomasdacosta/twitter-demo.svg?branch=develop)](https://travis-ci.org/thomasdacosta/twitter-demo)
 
-Consumidor de tweets desenvolvido em **Spring Boot** e **Java** para sumarizar o total de usuários por hashtag.
+Consumidor de tweets desenvolvido em **Spring Boot** e **Java** para sumarizar os usuários com maior numero de seguidores por hashtag
 
 ### Tecnologias
 - [Spring Boot](https://spring.io/projects/spring-boot)
@@ -30,7 +30,7 @@ docker push thomasdacosta/twitter-consumer:latest
 
 ### Persistência de Dados no Redis
 
-Esta imagem utiliza o **Redis** para persistir a quantidade de tweets por usuário e hashtag. As informações são gravadas em **hash** no formato **twitter-users_\<hashtag\>**, onde a chave é o **id do usuário no Twitter** e o valor é a **quantidade de tweets** da hashtag especificada.
+Esta imagem utiliza o **Redis** para persistir a quantidade de seguidores por usuário e hashtag. As informações são gravadas em **hash** no formato **twitter-users_\<hashtag\>**, onde a chave é o **id do usuário no Twitter** e o valor é a **quantidade de seguidores**.
 
 Para executar o **Redis** utilize o comando abaixo:
 
