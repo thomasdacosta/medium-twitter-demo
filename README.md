@@ -10,6 +10,7 @@ Abaixo segue a documentação de cada módulo:
 
 - [Twitter Consumer](https://github.com/thomasdacosta/twitter-demo/tree/master/twitter-consumer)
 - [Twitter API](https://github.com/thomasdacosta/twitter-demo/tree/master/twitter-api)
+- [Twitter Common](https://github.com/thomasdacosta/twitter-demo/tree/master/twitter-common)
 
 ### Integração Continua
 
