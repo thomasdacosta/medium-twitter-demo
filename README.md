@@ -8,8 +8,8 @@ Aplicação de exemplo para consumo das informações do Twitter utilizando hash
 
 Abaixo segue a documentação de cada módulo:
 
-- [Twitter Consumer](https://github.com/thomasdacosta/twitter-demo/tree/develop/twitter-consumer)
-- [Twitter API](https://github.com/thomasdacosta/twitter-demo/tree/develop/twitter-api)
+- [Twitter Consumer](https://github.com/thomasdacosta/twitter-demo/tree/master/twitter-consumer)
+- [Twitter API](https://github.com/thomasdacosta/twitter-demo/tree/master/twitter-api)
 
 
 ---
