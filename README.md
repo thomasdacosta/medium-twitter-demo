@@ -2,7 +2,17 @@
 
 [![Build Status](https://travis-ci.org/thomasdacosta/twitter-demo.svg?branch=master)](https://travis-ci.org/thomasdacosta/twitter-demo)
 
-Aplicação de exemplo para consumo das informações do Twitter utilizando hashtags como filtro de pesquisa e informar o usuário que possuir mais seguidores
+Aplicação de exemplo para consumo das informações do Twitter utilizando hashtags como filtro de pesquisa e informar o usuário que possui mais seguidores
+
+### Tecnologias
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Java 8](https://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
+- [twitter4j](http://twitter4j.org/en/index.html)
+- [Redis](https://redis.io/)
+- [Docker](https://www.docker.com/)
+- [Apache Maven](https://maven.apache.org/)
+- [Eclipse IDE](https://www.eclipse.org/)
+- [Travis CI](https://travis-ci.org)
 
 ### Módulos
 
@@ -14,7 +24,7 @@ Abaixo segue a documentação de cada módulo:
 
 ### Integração Continua
 
-Para o processo de integração continua foi utilizado o [Travis](https://travis-ci.org/thomasdacosta/twitter-demo). Verifique as configurações do processo de build no arquivo **.travis.yml**
+Para o processo de integração continua foi utilizado o [Travis CI](https://travis-ci.org/thomasdacosta/twitter-demo). Verifique as configurações do processo de build no arquivo **.travis.yml**
 
 ---
 
