@@ -11,6 +11,8 @@ services:
     image: thomasdacosta/twitter-consumer:latest
     depends_on:
       - db
+    environment:
+      - "JAVA_OPTS=-Dtwitter4j.debug=true -Dtwitter4j.oauth.consumerKey=**** -Dtwitter4j.oauth.consumerSecret=**** -Dtwitter4j.oauth.accessToken=**** -Dtwitter4j.oauth.accessTokenSecret=**** -Dspring.redis.port=6379 -Dspring.redis.host=db -Dspring.redis.password=twitterdemo -Dredis.ssl=false -DhashTag=#azure,#microsoft"
   api:
     image: thomasdacosta/twitter-api:latest
     ports:
@@ -18,5 +20,7 @@ services:
     depends_on:
       - db
       - consumer
+    environment:
+      - "JAVA_OPTS=-Dspring.redis.port=6379 -Dspring.redis.host=db -Dspring.redis.password=twitterdemo -Dredis.ssl=false"
 volumes:
     db_data:

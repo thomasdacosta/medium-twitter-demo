@@ -33,6 +33,8 @@ services:
     image: thomasdacosta/twitter-consumer:latest
     depends_on:
       - db
+    environment:
+      - "JAVA_OPTS=-Dtwitter4j.debug=true -Dtwitter4j.oauth.consumerKey=**** -Dtwitter4j.oauth.consumerSecret=**** -Dtwitter4j.oauth.accessToken=**** -Dtwitter4j.oauth.accessTokenSecret=**** -Dspring.redis.port=6379 -Dspring.redis.host=db -Dspring.redis.password=twitterdemo -Dredis.ssl=false -DhashTag=#azure,#microsoft"
   api:
     image: thomasdacosta/twitter-api:latest
     ports:
@@ -40,6 +42,8 @@ services:
     depends_on:
       - db
       - consumer
+    environment:
+      - "JAVA_OPTS=-Dspring.redis.port=6379 -Dspring.redis.host=db -Dspring.redis.password=twitterdemo -Dredis.ssl=false"
 volumes:
     db_data:
 ```
@@ -56,6 +60,59 @@ Enviar imagem para o [Docker Hub](https://hub.docker.com/u/thomasdacosta)
 
 ```
 docker push thomasdacosta/twitter-api:latest
+```
+
+### Obtendo informações da API
+
+```
+curl -X GET \
+  http://localhost:8080/users/azure \
+  -H 'Accept: */*' \
+  -H 'Accept-Encoding: gzip, deflate' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Host: localhost:8080' \
+  -H 'Postman-Token: af26c992-8625-4524-97c4-6c156ca67269,3f65e6a6-5c59-494c-937f-0db4cde4b47f' \
+  -H 'User-Agent: PostmanRuntime/7.19.0' \
+  -H 'cache-control: no-cache'
+```
+
+Retorno da API com o ranking dos usuários com mais seguidores:
+
+
+```
+[
+    {
+        "user": "keshavbeniwal2",
+        "followers": "52448",
+        "ranking": "1",
+        "hashtag": "azure"
+    },
+    {
+        "user": "solarwinds",
+        "followers": "15579",
+        "ranking": "2",
+        "hashtag": "azure"
+    },
+    {
+        "user": "netec",
+        "followers": "10031",
+        "ranking": "3",
+        "hashtag": "azure"
+    },
+    {
+        "user": "oliver_hoess",
+        "followers": "7645",
+        "ranking": "4",
+        "hashtag": "azure"
+    },
+    {
+        "user": "dsscreenshot",
+        "followers": "7145",
+        "ranking": "5",
+        "hashtag": "azure"
+    }
+]
 ```
 
 ### Persistência de Dados no Redis
