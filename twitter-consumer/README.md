@@ -57,7 +57,7 @@ docker run -e JAVA_OPTS="-Dtwitter4j.debug=true \
 
 ### Configurar Hashtags
 
-As **hastags** são configuradas no parâmetro **-DhashTag** separadas por virgula. Neste caso, a aplicação efetua a busca das informações no Twitter e sumariza no Redis a cada 10 segundos.
+As **hastags** são configuradas no parâmetro **-DhashTag** separadas por virgula. Neste caso, a aplicação efetua a busca das informações no Twitter e sumariza no Redis.
 
 
 ---
