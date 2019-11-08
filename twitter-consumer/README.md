@@ -33,7 +33,6 @@ A aplicação possui o **Spotify dockerfile-maven** para geração das imagens. 
 
 ```
 mvn clean install -P docker
-
 ```
 
 ### Persistência de Dados no Redis
