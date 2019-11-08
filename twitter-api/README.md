@@ -62,6 +62,15 @@ Enviar imagem para o [Docker Hub](https://hub.docker.com/u/thomasdacosta)
 docker push thomasdacosta/twitter-api:latest
 ```
 
+### Gerar imagem do container via Maven
+
+A aplicação possui o **Spotify dockerfile-maven** para geração das imagens. Foi criado um profile especifico para esta estapa:
+
+```
+mvn clean install -P docker
+
+```
+
 ### Obtendo informações da API
 
 ```
