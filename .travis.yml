@@ -12,8 +12,6 @@ before_install:
 
 script: 
   - ./mvnw clean install
-  
-after_install:
   - docker image build --build-arg JAR_FILE=target/twitter-api.jar --tag thomasdacosta/twitter-api:snapshot .
   - docker push thomasdacosta/twitter-api:snapshot
 
