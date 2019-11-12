@@ -12,7 +12,6 @@ before_install:
 
 script: 
   - ./mvnw clean install
-  - ./mvnw cobertura:cobertura
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker image build --build-arg JAR_FILE=target/twitter-api.jar --tag thomasdacosta/twitter-api:development $TRAVIS_BUILD_DIR/twitter-api
   - docker push thomasdacosta/twitter-api:development
