@@ -12,10 +12,11 @@ before_install:
 
 script: 
   - ./mvnw clean install
-  - docker image build --build-arg JAR_FILE=twitter-api/target/twitter-api.jar --tag thomasdacosta/twitter-api:snapshot .
+  - docker image build --build-arg JAR_FILE=$TRAVIS_BUILD_DIR/twitter-api/target/twitter-api.jar --tag thomasdacosta/twitter-api:snapshot .
   - docker push thomasdacosta/twitter-api:snapshot
-  - docker image build --build-arg JAR_FILE=twitter-consumer/target/twitter-consumer.jar --tag thomasdacosta/twitter-consumer:latest .
+  - docker image build --build-arg JAR_FILE=$TRAVIS_BUILD_DIR/twitter-consumer/target/twitter-consumer.jar --tag thomasdacosta/twitter-consumer:latest .
   - docker push thomasdacosta/twitter-consumer:latest
+  - echo $TRAVIS_BUILD_DIR
 
 cache:
   directories:
