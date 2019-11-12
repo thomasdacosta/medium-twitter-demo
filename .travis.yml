@@ -14,9 +14,9 @@ script:
   - ./mvnw clean install
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker image build --build-arg JAR_FILE=target/twitter-api.jar --tag thomasdacosta/twitter-api:snapshot $TRAVIS_BUILD_DIR/twitter-api
-  - docker push thomasdacosta/twitter-api:snapshot
+  - docker push thomasdacosta/twitter-api:development
   - docker image build --build-arg JAR_FILE=target/twitter-consumer.jar --tag thomasdacosta/twitter-consumer:latest $TRAVIS_BUILD_DIR/twitter-consumer
-  - docker push thomasdacosta/twitter-consumer:latest
+  - docker push thomasdacosta/twitter-consumer:development
 
 cache:
   directories:
