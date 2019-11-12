@@ -1,6 +1,8 @@
 # Twitter API
 
-[![Build Status](https://travis-ci.org/thomasdacosta/twitter-demo.svg?branch=master)](https://travis-ci.org/thomasdacosta/twitter-demo) ![Docker Pulls](https://img.shields.io/docker/pulls/thomasdacosta/twitter-api) ![Codecov](https://img.shields.io/codecov/c/github/thomasdacosta/twitter-demo)
+[![Build Status](https://travis-ci.org/thomasdacosta/twitter-demo.svg?branch=master)](https://travis-ci.org/thomasdacosta/twitter-demo) 
+![Docker Pulls](https://img.shields.io/docker/pulls/thomasdacosta/twitter-api) 
+[![codecov](https://codecov.io/gh/thomasdacosta/twitter-demo/branch/master/graph/badge.svg)](https://codecov.io/gh/thomasdacosta/twitter-demo)
 
 API desenvolvida em **Spring Boot** e **Java** para exibição dos usuários com maiores seguidores.
 
