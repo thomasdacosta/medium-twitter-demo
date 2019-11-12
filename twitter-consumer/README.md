@@ -1,6 +1,8 @@
 # Twitter Consumer
 
-[![Build Status](https://travis-ci.org/thomasdacosta/twitter-demo.svg?branch=master)](https://travis-ci.org/thomasdacosta/twitter-demo) ![Docker Pulls](https://img.shields.io/docker/pulls/thomasdacosta/twitter-consumer) ![Codecov](https://img.shields.io/codecov/c/github/thomasdacosta/twitter-demo)
+[![Build Status](https://travis-ci.org/thomasdacosta/twitter-demo.svg?branch=master)](https://travis-ci.org/thomasdacosta/twitter-demo) 
+![Docker Pulls](https://img.shields.io/docker/pulls/thomasdacosta/twitter-consumer) 
+[![codecov](https://codecov.io/gh/thomasdacosta/twitter-demo/branch/master/graph/badge.svg)](https://codecov.io/gh/thomasdacosta/twitter-demo)
 
 Consumidor de tweets desenvolvido em **Spring Boot** e **Java** para sumarizar os usuários com maior numero de seguidores por hashtag
 
