@@ -20,10 +20,6 @@ public class TwitterUserError implements Serializable {
 	@Setter
 	private String detail;
 
-	public static TwitterUserError invalidArgument(Exception ex) {
-		return TwitterUserError.create().message("INVALID ARGUMENT").detail(ex.getMessage());
-	}
-
 	public static TwitterUserError notFound(Exception ex) {
 		return TwitterUserError.create().message("NOT FOUND").detail(ex.getMessage());
 	}

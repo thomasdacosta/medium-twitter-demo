@@ -1,6 +1,7 @@
 package br.com.thomasdacosta;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
@@ -74,6 +75,11 @@ public class TwitterApiControllerTest {
 		mvc.perform(get("/users/aws")).andExpect(status().isNotFound());
 	}
 
+	@Test
+	public void test01_405() throws Exception {
+		mvc.perform(post("/users/aws")).andExpect(status().isMethodNotAllowed());
+	}
+	
 	private void insertHashTagData() {
 		hashOperations.put("twitter-users_azure", "keshavbeniwal2", "52448");
 		hashOperations.put("twitter-users_azure", "solarwinds", "15579");
