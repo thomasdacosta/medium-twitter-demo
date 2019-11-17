@@ -71,6 +71,10 @@ public class TwiiterUserRepositoryImpl implements TwitterUserRepository {
 			throw new RedisOperationException(ex.getMessage(), ex);
 		}
 	}
+	
+	public void test() {
+		System.out.println();
+	}
 
 	@Override
 	public Map<String, Integer> findByHashTag(String hashTag) {

@@ -23,15 +23,18 @@ public class TwitterRepositoryImpl implements TwitterRepository {
 	private static final Integer LIMIT_TWEETS = 100;
 	private static Twitter twitter = TwitterFactory.getSingleton();
 	
+	private Query query = null;
+	private QueryResult queryResult = null;
+	
 	@Override
 	public List<Status> findByHashTag(String hashTag) {
 		List<Status> tweets = new ArrayList<>();
 		
 		try {
-			Query query = new Query(hashTag);
+			query = new Query(hashTag);
 			query.count(LIMIT_TWEETS);
 			
-			QueryResult queryResult = twitter.search(query);
+			queryResult = twitter.search(query);
 			tweets = queryResult.getTweets();
 		} catch (Exception ex) {
 			logger.error(ex.getMessage(), ex);

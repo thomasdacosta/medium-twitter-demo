@@ -72,7 +72,7 @@ public class TwitterUserServiceTest {
     
     @Test
     public void testRepository() {
-    	
+    	repository.test();
     }
 	
 }
