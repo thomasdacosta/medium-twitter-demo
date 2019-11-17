@@ -1,4 +1,4 @@
-package integration;
+package br.com.thomasdacosta;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -23,20 +23,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import br.com.thomasdacosta.TwitterApiApplication;
-
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TwitterApiApplication.class)
+@SpringBootTest
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TwitterApiControllerIT {
+public class TwitterApiControllerTest {
 
 	private static EmbededRedisServer server;
 
 	private static HashOperations<String, String, String> hashOperations;
-	private ObjectMapper mapper = new ObjectMapper();
 
 	@Autowired
 	private RedisTemplate<String, String> redisTemplate;

@@ -1,4 +1,4 @@
-package integration;
+package br.com.thomasdacosta;
 
 import redis.embedded.RedisServer;
 
