@@ -19,7 +19,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import br.com.thomasdacosta.dto.TwitterUser;
-import br.com.thomasdacosta.repository.TwitterUserRepository;
+import br.com.thomasdacosta.repository.impl.TwiiterUserRepositoryImpl;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TwitterUserServiceTest {
@@ -31,7 +31,7 @@ public class TwitterUserServiceTest {
 	private TwitterUserService service;
 	
 	@Mock
-	private TwitterUserRepository repository;
+	private TwiiterUserRepositoryImpl repository;
 	
     @Rule
     public ErrorCollector collector = new ErrorCollector();
@@ -60,7 +60,7 @@ public class TwitterUserServiceTest {
     @Test
     public void testRespositoryFindSummary() {
     	Map<String, Integer> values = repository.findByHashTag(HASHTAG_AZURE);
-    	collector.checkThat(values.get(TWITTER_USER), is(equalTo(1L)));
+    	collector.checkThat(values.get(TWITTER_USER), is(equalTo(1)));
     }
     
     @Test
@@ -68,6 +68,11 @@ public class TwitterUserServiceTest {
     	List<TwitterUser> values = service.findByHashTag(HASHTAG_AZURE);
     	collector.checkThat(values.size(), is(equalTo(1)));
     	collector.checkThat(values.get(0).getUser(), is(TWITTER_USER));
+    }
+    
+    @Test
+    public void testRepository() {
+    	
     }
 	
 }

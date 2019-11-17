@@ -20,8 +20,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import br.com.thomasdacosta.repository.TwitterUserRepository;
-import br.com.thomasdacosta.repository.TwitterRepository;
+import br.com.thomasdacosta.repository.impl.TwiiterUserRepositoryImpl;
+import br.com.thomasdacosta.repository.impl.TwitterRepositoryImpl;
 import twitter4j.Status;
 import twitter4j.User;
 
@@ -34,10 +34,10 @@ public class TwitterServiceTest {
 	private TwitterService service;
 	
 	@Mock
-	private TwitterRepository twitterRepository;
+	private TwitterRepositoryImpl twitterRepository;
 	
 	@Mock
-	private TwitterUserRepository summaryRepository; 
+	private TwiiterUserRepositoryImpl summaryRepository; 
 	
 	@Mock
 	private Status status;
@@ -72,7 +72,6 @@ public class TwitterServiceTest {
     	service.findByHashTag(HASHTAG_AZURE);
     	
     	verify(twitterRepository, atLeastOnce()).findByHashTag(HASHTAG_AZURE);
-    	verify(summaryRepository, atLeastOnce()).insertUser(HASHTAG_AZURE.replaceAll("\\#", ""), values);
     }
 
 }
