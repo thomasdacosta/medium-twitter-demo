@@ -25,7 +25,7 @@ public class RestControllerHandler extends ResponseEntityExceptionHandler {
 	 * Erro 404
 	 */
 	@Override
-	protected ResponseEntity<Object> handleNoHandlerFoundException(NoHandlerFoundException ex, HttpHeaders headers,
+	public ResponseEntity<Object> handleNoHandlerFoundException(NoHandlerFoundException ex, HttpHeaders headers,
 			HttpStatus status, WebRequest request) {
 		logger.error(ex.getMessage(), ex);
 		return new ResponseEntity<>(TwitterUserError.notFound(ex), HttpStatus.NOT_FOUND);
@@ -35,7 +35,7 @@ public class RestControllerHandler extends ResponseEntityExceptionHandler {
 	 * Erro 404 
 	 */
 	@ExceptionHandler(NotFoundException.class)
-	protected ResponseEntity<Object> handleNotFound(NotFoundException ex) {
+	public ResponseEntity<Object> handleNotFound(NotFoundException ex) {
 		logger.error(ex.getMessage(), ex);
 		return new ResponseEntity<>(TwitterUserError.notFound(ex), HttpStatus.NOT_FOUND);
 	}
@@ -44,7 +44,7 @@ public class RestControllerHandler extends ResponseEntityExceptionHandler {
 	 * Erro 405
 	 */
 	@Override
-	protected ResponseEntity<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException ex,
+	public ResponseEntity<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException ex,
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
 		logger.error(ex.getMessage(), ex);
 		return new ResponseEntity<>(TwitterUserError.failedPrecondition(ex), status);
@@ -54,7 +54,7 @@ public class RestControllerHandler extends ResponseEntityExceptionHandler {
 	 * Erro 500
 	 */
 	@ExceptionHandler(RedisOperationException.class)
-	protected ResponseEntity<Object> handleThrowable(final Exception ex) {
+	public ResponseEntity<Object> handleThrowable(final Exception ex) {
 		logger.error(ex.getMessage(), ex);
 		return new ResponseEntity<>(TwitterUserError.internalServerError(ex), HttpStatus.INTERNAL_SERVER_ERROR);
 	}

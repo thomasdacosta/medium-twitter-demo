@@ -1,4 +1,4 @@
-package br.com.thomasdacosta.configuration;
+package br.com.thomasdacosta;
 
 import static org.junit.Assert.assertNotNull;
 
