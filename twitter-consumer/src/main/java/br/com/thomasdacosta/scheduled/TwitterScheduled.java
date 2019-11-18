@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
 
 import br.com.thomasdacosta.exception.TwitterOperationException;
 import br.com.thomasdacosta.service.TwitterService;
+import lombok.Getter;
+import lombok.Setter;
 
 @Component
 @Configuration
@@ -22,15 +24,19 @@ public class TwitterScheduled {
 
 	@Autowired
 	private TwitterService twitterService;
+	
+	@Getter @Setter
+	private boolean existApp = true;
 
-	@Value("${hashTag}")
+	@Value("${hashTag}") @Getter @Setter
 	private String[] hashTags;
 
 	@PostConstruct
 	public void init() {
 		if (ArrayUtils.isEmpty(hashTags)) {
-			System.exit(-10);
 			logger.error("#### HashTag is empty");
+			if (existApp)
+				System.exit(-10);
 			throw new TwitterOperationException("HashTag is empty");
 		}
 	}
