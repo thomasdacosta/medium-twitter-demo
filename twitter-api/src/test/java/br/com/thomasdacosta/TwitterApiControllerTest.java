@@ -16,6 +16,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -39,7 +40,7 @@ public class TwitterApiControllerTest {
 
 	@Autowired
 	private WebApplicationContext context;
-
+	
 	private MockMvc mvc;
 
 	@BeforeClass
@@ -62,6 +63,13 @@ public class TwitterApiControllerTest {
 			hashOperations = redisTemplate.opsForHash();
 			insertHashTagData();
 		}
+	}
+	
+	@Test
+	public void testMain() {
+		TwitterApiApplication.main(new String[] {});
+		TwitterApiApplication apiApplication = new TwitterApiApplication();
+		apiApplication.configure(new SpringApplicationBuilder());
 	}
 
 	@Test
