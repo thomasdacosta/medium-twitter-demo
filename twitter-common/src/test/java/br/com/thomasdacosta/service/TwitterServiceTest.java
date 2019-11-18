@@ -18,7 +18,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import br.com.thomasdacosta.repository.impl.TwiiterUserRepositoryImpl;
+import br.com.thomasdacosta.repository.impl.TwitterUserRepositoryImpl;
 import br.com.thomasdacosta.repository.impl.TwitterRepositoryImpl;
 import twitter4j.Status;
 import twitter4j.User;
@@ -35,7 +35,7 @@ public class TwitterServiceTest {
 	private TwitterRepositoryImpl twitterRepository;
 
 	@Mock
-	private TwiiterUserRepositoryImpl summaryRepository;
+	private TwitterUserRepositoryImpl summaryRepository;
 	
 	@Mock
 	private Status status;

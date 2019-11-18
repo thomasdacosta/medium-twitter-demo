@@ -26,9 +26,9 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Pipeline;
 
 @Repository
-public class TwiiterUserRepositoryImpl implements TwitterUserRepository {
+public class TwitterUserRepositoryImpl implements TwitterUserRepository {
 
-	private static final Logger logger = LoggerFactory.getLogger(TwiiterUserRepositoryImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(TwitterUserRepositoryImpl.class);
 
 	@Getter
 	private HashOperations<String, String, Integer> hashOperations;
@@ -43,7 +43,7 @@ public class TwiiterUserRepositoryImpl implements TwitterUserRepository {
 	private String mapUser;
 
 	@Autowired
-	public TwiiterUserRepositoryImpl(RedisTemplate<String, String> redisUserTemplate) {
+	public TwitterUserRepositoryImpl(RedisTemplate<String, String> redisUserTemplate) {
 		this.redisTemplate = redisUserTemplate;
 	}
 
@@ -72,10 +72,6 @@ public class TwiiterUserRepositoryImpl implements TwitterUserRepository {
 		}
 	}
 	
-	public void test() {
-		System.out.println();
-	}
-
 	@Override
 	public Map<String, Integer> findByHashTag(String hashTag) {
 		Map<String, Integer> values = new HashMap<>();

@@ -31,7 +31,9 @@ public class TwitterRepositoryImpl implements TwitterRepository {
 		List<Status> tweets = new ArrayList<>();
 		
 		try {
-			query = new Query(hashTag);
+			if (query == null)
+				query = new Query(hashTag);
+			
 			query.count(LIMIT_TWEETS);
 			
 			queryResult = twitter.search(query);
@@ -41,6 +43,14 @@ public class TwitterRepositoryImpl implements TwitterRepository {
 			throw new TwitterOperationException(ex.getMessage(), ex);
 		}
 		return tweets;
+	}
+
+	public static Twitter getTwitter() {
+		return twitter;
+	}
+
+	public static void setTwitter(Twitter twitter) {
+		TwitterRepositoryImpl.twitter = twitter;
 	}
 
 }

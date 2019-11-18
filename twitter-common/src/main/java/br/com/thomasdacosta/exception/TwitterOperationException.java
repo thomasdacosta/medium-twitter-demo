@@ -12,17 +12,8 @@ public class TwitterOperationException extends RuntimeException {
 		super(message);
 	}
 
-	public TwitterOperationException(Throwable cause) {
-		super(cause);
-	}
-
 	public TwitterOperationException(String message, Throwable cause) {
 		super(message, cause);
-	}
-
-	public TwitterOperationException(String message, Throwable cause, boolean enableSuppression,
-			boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
 	}
 
 }

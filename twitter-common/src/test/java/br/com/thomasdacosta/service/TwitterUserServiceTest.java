@@ -19,7 +19,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import br.com.thomasdacosta.dto.TwitterUser;
-import br.com.thomasdacosta.repository.impl.TwiiterUserRepositoryImpl;
+import br.com.thomasdacosta.repository.impl.TwitterUserRepositoryImpl;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TwitterUserServiceTest {
@@ -31,7 +31,7 @@ public class TwitterUserServiceTest {
 	private TwitterUserService service;
 	
 	@Mock
-	private TwiiterUserRepositoryImpl repository;
+	private TwitterUserRepositoryImpl repository;
 	
     @Rule
     public ErrorCollector collector = new ErrorCollector();
@@ -70,9 +70,4 @@ public class TwitterUserServiceTest {
     	collector.checkThat(values.get(0).getUser(), is(TWITTER_USER));
     }
     
-    @Test
-    public void testRepository() {
-    	repository.test();
-    }
-	
 }

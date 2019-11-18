@@ -12,17 +12,8 @@ public class RedisOperationException extends RuntimeException {
 		super(message);
 	}
 
-	public RedisOperationException(Throwable cause) {
-		super(cause);
-	}
-
 	public RedisOperationException(String message, Throwable cause) {
 		super(message, cause);
-	}
-
-	public RedisOperationException(String message, Throwable cause, boolean enableSuppression,
-			boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
 	}
 
 }
