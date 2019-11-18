@@ -29,4 +29,4 @@ Para o processo de integração continua foi utilizado o [Travis CI](https://tra
 
 ---
 
-Thomás da Costa - [https://thomasdacosta.com.br](https://thomasdacosta.com.br)
+Thomás da Costa - [https://thomasdacosta.com.br] (https://thomasdacosta.com.br)
