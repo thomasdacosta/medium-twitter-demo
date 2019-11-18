@@ -22,6 +22,7 @@ import br.com.thomasdacosta.exception.NotFoundException;
 import br.com.thomasdacosta.exception.RedisOperationException;
 import br.com.thomasdacosta.repository.TwitterUserRepository;
 import lombok.Getter;
+import lombok.Setter;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Pipeline;
 
@@ -30,18 +31,18 @@ public class TwitterUserRepositoryImpl implements TwitterUserRepository {
 
 	private static final Logger logger = LoggerFactory.getLogger(TwitterUserRepositoryImpl.class);
 
-	@Getter
+	@Getter @Setter
 	private HashOperations<String, String, Integer> hashOperations;
 
-	@Autowired
+	@Autowired @Getter @Setter
 	private RedisTemplate<String, String> redisTemplate;
 
-	@Autowired
+	@Autowired @Getter @Setter
 	private RedisConfiguration redisConfiguration;
 
-	@Value("${map.user}")
+	@Value("${map.user}") @Getter @Setter
 	private String mapUser;
-
+	
 	@Autowired
 	public TwitterUserRepositoryImpl(RedisTemplate<String, String> redisUserTemplate) {
 		this.redisTemplate = redisUserTemplate;
