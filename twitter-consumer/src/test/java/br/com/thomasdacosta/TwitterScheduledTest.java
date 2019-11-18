@@ -48,4 +48,9 @@ public class TwitterScheduledTest {
 		verify(service, atLeastOnce()).findByHashTag(Mockito.anyString());
 	}
 	
+	@Test
+	public void testMain() {
+		TwitterConsumerApplication.main(new String[] {});
+	}
+	
 }
