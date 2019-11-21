@@ -9,7 +9,6 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
-import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import br.com.thomasdacosta.dto.TwitterUserError;
@@ -20,16 +19,6 @@ import br.com.thomasdacosta.exception.RedisOperationException;
 public class RestControllerHandler extends ResponseEntityExceptionHandler {
 	
 	private static final Logger logger = LoggerFactory.getLogger(RestControllerHandler.class);
-	
-	/**
-	 * Erro 404
-	 */
-	@Override
-	public ResponseEntity<Object> handleNoHandlerFoundException(NoHandlerFoundException ex, HttpHeaders headers,
-			HttpStatus status, WebRequest request) {
-		logger.error(ex.getMessage(), ex);
-		return new ResponseEntity<>(TwitterUserError.notFound(ex), HttpStatus.NOT_FOUND);
-	}
 	
 	/**
 	 * Erro 404 

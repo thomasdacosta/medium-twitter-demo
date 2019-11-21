@@ -79,12 +79,12 @@ public class TwitterApiControllerTest {
 	}
 
 	@Test
-	public void test01_400() throws Exception {
+	public void test02_404() throws Exception {
 		mvc.perform(get("/users/aws")).andExpect(status().isNotFound());
 	}
 
 	@Test
-	public void test01_405() throws Exception {
+	public void test03_405() throws Exception {
 		mvc.perform(post("/users/aws")).andExpect(status().isMethodNotAllowed());
 	}
 	
