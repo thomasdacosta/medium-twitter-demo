@@ -4,7 +4,9 @@ import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.verify;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.contrib.java.lang.system.ExpectedSystemExit;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -23,6 +25,9 @@ public class TwitterScheduledTest {
 
 	@Mock
 	private TwitterService service;
+	
+	@Rule
+	public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 	
 	@Before
 	public void setup() {
@@ -51,6 +56,13 @@ public class TwitterScheduledTest {
 	@Test
 	public void testMain() {
 		TwitterConsumerApplication.main(new String[] {});
+	}
+	
+	@Test
+	public void testExit() {
+		exit.expectSystemExitWithStatus(-10);
+		scheduled.setExistApp(true);
+		scheduled.init();
 	}
 	
 }
