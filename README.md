@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/thomasdacosta/twitter-demo.svg?branch=master)](https://travis-ci.org/thomasdacosta/twitter-demo)
 [![codecov](https://codecov.io/gh/thomasdacosta/twitter-demo/branch/master/graph/badge.svg)](https://codecov.io/gh/thomasdacosta/twitter-demo)
 
-**Artigo sobre o repositório:** https://medium.com/@thomsdacosta/azure-e-java-implantando-aplica%C3%A7%C3%B5es-com-docker-dbda69a719a
+**Artigo sobre o repositório:** [Azure e Java: Implantando aplicações com Docker](https://medium.com/@thomsdacosta/azure-e-java-implantando-aplica%C3%A7%C3%B5es-com-docker-dbda69a719a)
 
 Aplicação de exemplo para consumo das informações do Twitter utilizando hashtags como filtro de pesquisa e informar o usuário que possui mais seguidores
 
