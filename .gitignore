@@ -3,6 +3,8 @@
 # Edit at https://www.gitignore.io/?templates=java,maven,eclipse,intellij,visualstudiocode
 
 .DS_Store
+.idea/**
+*.iml
 
 ### Eclipse ###
 obj/**
